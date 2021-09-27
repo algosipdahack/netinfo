@@ -261,6 +261,7 @@ DIST          = ../arp-sppof/test.db \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/spec_post.prf \
+		../arp-sppof/.qmake.stash \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -281,9 +282,7 @@ DIST          = ../arp-sppof/test.db \
 		netblock.h \
 		packet.h \
 		parser.h \
-		pch.h \
-		/home/bob/project/final/w/app/db-connect/db-connect.h \
-		/home/bob/project/final/w/app/db-connect/sqlite3.h ../arp-sppof/arppacket.cpp \
+		pch.h ../arp-sppof/arppacket.cpp \
 		../arp-sppof/core.cpp \
 		../arp-sppof/fullscan.cpp \
 		../arp-sppof/main.cpp \
@@ -493,6 +492,7 @@ Makefile: ../arp-sppof/tmp.pro /opt/Qt/5.14.2/gcc_64/mkspecs/linux-g++/qmake.con
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/qt_config.prf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/toolchain.prf \
 		/opt/Qt/5.14.2/gcc_64/mkspecs/features/default_pre.prf \
@@ -699,6 +699,7 @@ Makefile: ../arp-sppof/tmp.pro /opt/Qt/5.14.2/gcc_64/mkspecs/linux-g++/qmake.con
 /opt/Qt/5.14.2/gcc_64/mkspecs/features/qt_config.prf:
 /opt/Qt/5.14.2/gcc_64/mkspecs/linux-g++/qmake.conf:
 /opt/Qt/5.14.2/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /opt/Qt/5.14.2/gcc_64/mkspecs/features/exclusive_builds.prf:
 /opt/Qt/5.14.2/gcc_64/mkspecs/features/toolchain.prf:
 /opt/Qt/5.14.2/gcc_64/mkspecs/features/default_pre.prf:
@@ -826,7 +827,8 @@ core.o: ../arp-sppof/core.cpp ../arp-sppof/core.h \
 		../../../tmp/w/src/net/wintflist.h \
 		../../../tmp/w/src/net/wintf.h \
 		../../../tmp/w/src/net/wrtm.h \
-		../../../tmp/w/src/net/wrtmentry.h
+		../../../tmp/w/src/net/wrtmentry.h \
+		../arp-sppof/parser.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o core.o ../arp-sppof/core.cpp
 
 fullscan.o: ../arp-sppof/fullscan.cpp ../arp-sppof/arppacket.h \
@@ -862,7 +864,8 @@ fullscan.o: ../arp-sppof/fullscan.cpp ../arp-sppof/arppacket.h \
 		../../../tmp/w/src/net/wintflist.h \
 		../../../tmp/w/src/net/wintf.h \
 		../../../tmp/w/src/net/wrtm.h \
-		../../../tmp/w/src/net/wrtmentry.h
+		../../../tmp/w/src/net/wrtmentry.h \
+		/home/bob/project/final/w/app/db-connect/db-connect.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o fullscan.o ../arp-sppof/fullscan.cpp
 
 main.o: ../arp-sppof/main.cpp ../arp-sppof/core.h \
